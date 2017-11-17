@@ -8,12 +8,27 @@
   <!-- Styles -->
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/animate.css" rel="stylesheet">
-  <link href="css/style.min.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
 </head>
 
 <body>
 
   
+  <div class="container">
+    <div class="heading">
+      <h1>TwitchTV App</h1>
+      <br/>
+      <button id="all" class="filter">All</button>
+      <button id="online" class="filter">Online</button>
+      <button id="offline" class="filter">Offline</button>
+    </div>
+    <form class="searchForm">
+      <input class="searchFormInput" type="search" name="search" placeholder="Search...">
+    </form>
+    <div id="results-list">
+      
+    </div>
+  </div>
 
   <script src="js/jquery-3.1.1.min.js"></script>
   <script src="js/bootstrap.min.js"></script>
