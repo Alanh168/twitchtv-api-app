@@ -17,16 +17,25 @@
   <div class="container">
     <div class="heading">
       <h1>TwitchTV App</h1>
-      <br/>
-      <button id="all" class="filter">All</button>
-      <button id="online" class="filter">Online</button>
-      <button id="offline" class="filter">Offline</button>
+      <!-- <br/> -->
+      <div class="row">
+        <div class="col-4">
+          <button id="all" class="filter">All</button>
+        </div>
+        <div class="col-4">
+          <button id="online" class="filter">Online</button>
+        </div>
+        <div class="col-4">
+          <button id="offline" class="filter">Offline</button>
+        </div>
+      </div>
+      
+      
     </div>
     <form class="searchForm">
       <input class="searchFormInput" type="search" name="search" placeholder="Search...">
     </form>
-    <div id="results-list">
-      
+    <div id="streamsList">
     </div>
   </div>
 

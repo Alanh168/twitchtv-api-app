@@ -3,12 +3,13 @@
 	src: url(../fonts/Twitchy.TV.ttf);
 }
 
+$background: #56487b;
 $twitch-purple: #4b367c;
 $neutral: #e4e4e4;
 $twitch-dark-purple: #17141f;
 
 body {
-	background-color: $twitch-dark-purple;
+	background-color: $background;
 }
 
 .container {
@@ -17,7 +18,7 @@ body {
 	padding: 0px;
 	width: 40%;
 	border-radius: 5px;
-	box-shadow: 4px 4px 4px 2px rgba(0, 0, 0, 0.2);
+	box-shadow: 0 0 3em black;
 }
 
 .heading {
@@ -28,30 +29,54 @@ h1 {
 	font-family: 'Twitchy';
 	color: $twitch-purple;
 	text-shadow: 2px 2px white;
+	margin-bottom: 30px;
+}
+
+.heading {
+	.row {
+		width: 100%;
+		margin: 0px;
+		.col-4 {
+			padding: 0px;
+		}
+
+	}
+
 }
 
 .filter {
-	border-radius: 5px;
 	background-color: $twitch-purple;
+	font-size: 22px;
 	color: white;
 	outline: none;
 	border: none;
 	font-weight: 700;
+	width: 100%;
+	text-shadow: 1px 1px 2px grey;
+	-webkit-transition: -webkit-transform 2s;
+    transition: transform .3s;
 	&:hover {
 		cursor: pointer;
+		transform: translateY(-2px);
+	}
+	&:focus {
+		outline: none;
+	}
+	&:not(#offline) {
+		border-right: 2px solid black;
 	}
 }
 
 input[type=search]:not(.browser-default) {
 	border: none;
 	padding: 0 45px 0 15px;
-    font-size: 32px;
-	line-height: 54px;
+    font-size: 28px;
+	line-height: 48px;
 	// background-color: $watermelon;
 	color: $twitch-dark-purple;
 	border-radius: 5px;
 	width: 100%;
-	margin: 2% 0px 0px 0px;
+	border-bottom: 2px solid black;
 	box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 1px 5px 0 rgba(0,0,0,0.12), 0 3px 1px -2px rgba(0,0,0,0.2);
     -webkit-transition: width 0.4s ease-in-out;
     transition: width 0.4s ease-in-out;
@@ -77,3 +102,76 @@ input[type=search]:not(.browser-default) {
 	  opacity: .7;
 	}
 }
+
+#streamsList {
+	min-height: 470px;
+	max-height: 470px;
+	border-radius: 5px;
+	background-color: white;
+	overflow: scroll;
+	overflow-x: hidden;
+}
+
+a:hover, a:visited, a:active, a:-webkit-any-link {
+	text-decoration: none;
+}
+
+.stream {
+	height: 120px;
+	border-radius: 5px;
+	border-bottom: 2px solid grey;
+	padding: 10px 0px;
+	-webkit-transition: -webkit-transform 2s;
+    transition: transform .5s;
+    &:hover {
+    	transform: translateY(-5px);
+    }
+    .row {
+    	margin: 0px;
+    }
+    .image-container {
+		text-align: center;
+	}
+	.streamLogo {
+		border-radius: 50%;
+		height: 60px;
+		margin: 0 auto;
+		margin-top: 15px;
+		-moz-box-shadow: 0px 6px 5px #ccc;
+		-webkit-box-shadow: 0px 6px 5px #ccc;
+		box-shadow: 0px 6px 5px #ccc;
+	}
+	.streamTitle {
+		font-size: 20px;
+		font-weight: 700;
+		color: $background;
+		// text-shadow: 1px 1px 1px black;
+		font-family: Roboto, Arial, Sans-Serif;
+	}
+	.streamBio {
+		font-size: 12px;
+		color: grey;
+	}
+	.online, .offline {
+		text-align: center;
+		font-weight: 700;
+		margin-top: 20px;
+		font-size: 32px;
+		text-shadow: 1px 1px 2px black;
+	}
+	.online {
+		color: green;
+		&:hover {
+			color: green;
+		}
+	}
+	.offline {
+		color: red;
+		&:hover {
+			color: red;
+		}
+	}
+
+}
+
+
