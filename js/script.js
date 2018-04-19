@@ -13,6 +13,7 @@ $(document).ready(function() {
 				method: "GET",
 				dataType: "json",
 				cache: false,
+				async: false,
 				success: function(data){
 					console.log("Testing AJAX call on username: " + data.display_name + " " + data.bio + " " + data._links.self);
 					var userInfo = [data.display_name, data.bio, data.name];
@@ -54,11 +55,12 @@ $(document).ready(function() {
 				method: "GET",
 				dataType: "json",
 				cache: false,
+				async: false,
 				success: function(data){
 					console.log("Testing link value: " + data._links.self);
 					var user = document.querySelector(`#item${asyncCount}`);
 					if(data.stream == null) {
-						console.log("Testing stream value: " + data.stream);
+						console.log("Testing stream status: " + data.stream);
 						user.insertAdjacentHTML("beforeend",
 							`<div class="col-2">
 								<h4 class="offline">&otimes;</h4>
@@ -66,6 +68,7 @@ $(document).ready(function() {
 						);
 					}
 					else {
+						console.log("Testing stream status: " + data.stream.channel.status);
 						user.insertAdjacentHTML("beforeend",
 							`<div class="col-2">
 								<h4 class="online">&check;</h4>
